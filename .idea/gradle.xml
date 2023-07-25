@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/gateway" />
+        <option name="gradleJvm" value="corretto-17 (2)" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/gateway" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/geo" />
+        <option name="gradleJvm" value="corretto-17 (2)" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/geo" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/profile" />
+        <option name="gradleJvm" value="corretto-17 (2)" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/profile" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/rates" />
+        <option name="gradleJvm" value="corretto-17 (2)" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/rates" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/search" />
+        <option name="gradleJvm" value="corretto-17 (2)" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/search" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>
