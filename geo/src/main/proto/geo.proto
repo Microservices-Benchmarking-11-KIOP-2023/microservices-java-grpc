@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "pb.java.microservices.grpc.geo.generatedProto";
+
+package geo;
+
+service Geo {
+  rpc Nearby(Request) returns (Result);
+}
+
+message Request {
+  float lat = 1;
+  float lon = 2;
+}
+
+message Result {
+  repeated string hotelIds = 1;
+}

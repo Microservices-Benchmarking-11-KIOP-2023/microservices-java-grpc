@@ -3,8 +3,17 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Rate" />
+        <option name="gradleJvm" value="openjdk-20" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Rate" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/gateway" />
-        <option name="gradleJvm" value="corretto-17 (2)" />
+        <option name="gradleJvm" value="openjdk-20" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/gateway" />
@@ -13,7 +22,7 @@
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/geo" />
-        <option name="gradleJvm" value="corretto-17 (2)" />
+        <option name="gradleJvm" value="openjdk-20" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/geo" />
@@ -22,7 +31,7 @@
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/profile" />
-        <option name="gradleJvm" value="corretto-17 (2)" />
+        <option name="gradleJvm" value="openjdk-20" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/profile" />
@@ -30,17 +39,8 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
-        <option name="externalProjectPath" value="$PROJECT_DIR$/rates" />
-        <option name="gradleJvm" value="corretto-17 (2)" />
-        <option name="modules">
-          <set>
-            <option value="$PROJECT_DIR$/rates" />
-          </set>
-        </option>
-      </GradleProjectSettings>
-      <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/search" />
-        <option name="gradleJvm" value="corretto-17 (2)" />
+        <option name="gradleJvm" value="openjdk-20" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/search" />
