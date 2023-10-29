@@ -12,7 +12,7 @@ import java.io.IOException;
 public class GrpcServerConfiguration {
     @Bean
     public Server grpcServer(RateServiceImpl rateService) throws IOException {
-        Server server = ServerBuilder.forPort(8084)
+        Server server = ServerBuilder.forPort(8080)
                 .addService(rateService)
                 .build();
         server.start();

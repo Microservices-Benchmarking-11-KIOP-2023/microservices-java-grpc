@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/Rate" />
-        <option name="gradleJvm" value="openjdk-20" />
+        <option name="gradleJvm" value="corretto-20" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/Rate" />
@@ -13,7 +14,7 @@
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/gateway" />
-        <option name="gradleJvm" value="openjdk-20" />
+        <option name="gradleJvm" value="corretto-20" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/gateway" />
@@ -22,7 +23,7 @@
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/geo" />
-        <option name="gradleJvm" value="openjdk-20" />
+        <option name="gradleJvm" value="corretto-20" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/geo" />
@@ -31,7 +32,7 @@
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/profile" />
-        <option name="gradleJvm" value="openjdk-20" />
+        <option name="gradleJvm" value="corretto-20" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/profile" />
@@ -40,7 +41,7 @@
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/search" />
-        <option name="gradleJvm" value="openjdk-20" />
+        <option name="gradleJvm" value="corretto-20" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/search" />

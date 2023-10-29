@@ -1,0 +1,30 @@
+services:
+  gateway:
+    build:
+      dockerfile: Dockerfile
+      context: ./gateway
+    ports:
+      - "5000:5000"
+    depends_on:
+      - search
+      - profile
+  search:
+    build:
+      dockerfile: Dockerfile
+      context: ./search
+    depends_on:
+      - geo
+      - rate
+
+  profile:
+    build:
+      dockerfile: Dockerfile
+      context: ./profile
+  geo:
+    build:
+      dockerfile: Dockerfile
+      context: ./geo
+  rate:
+    build:
+      dockerfile: Dockerfile
+      context: ./rate

@@ -12,7 +12,7 @@ import java.io.IOException;
 public class GrpcServerConfiguration {
     @Bean
     public Server grpcServer(GeoServiceImpl geoService) throws IOException {
-        Server server = ServerBuilder.forPort(8083)
+        Server server = ServerBuilder.forPort(8080)
                 .addService(geoService)
                 .build();
         server.start();

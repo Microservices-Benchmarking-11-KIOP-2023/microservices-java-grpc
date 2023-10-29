@@ -5,44 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13cf2db7-0e2a-4ddc-bc6f-81747c71175a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rate/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/geo/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/profile/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/search/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/compose.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/src/main/java/pb/java/microservices/grpc/gateway/GatewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/main/java/pb/java/microservices/grpc/gateway/GatewayApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rate/src/main/java/pb/java/microservices/grpc/Rate/config/GrpcServerConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/Rate/src/main/java/pb/java/microservices/grpc/Rate/config/GrpcServerConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/geo/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/geo/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/geo/compose.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/geo/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/geo/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/geo/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/geo/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/geo/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/geo/gradlew" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/geo/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/geo/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profile/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/profile/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profile/compose.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/profile/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/profile/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profile/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/profile/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profile/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/profile/gradlew" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profile/src/main/java/pb/java/microservices/grpc/profile/ProfileApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/profile/src/main/java/pb/java/microservices/grpc/profile/ProfileApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profile/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/profile/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profile/src/test/java/pb/java/microservices/grpc/profile/ProfileApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/profile/src/test/java/pb/java/microservices/grpc/profile/ProfileApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rates/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rates/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rates/compose.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rates/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rates/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rates/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rates/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rates/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rates/src/main/java/pb/java/microservices/grpc/rates/RatesApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rates/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rates/src/test/java/pb/java/microservices/grpc/rates/RatesApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/search/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/search/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/search/compose.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/search/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/search/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/search/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/search/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/search/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/search/gradlew" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/geo/src/main/java/pb/java/microservices/grpc/geo/config/GrpcServerConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/geo/src/main/java/pb/java/microservices/grpc/geo/config/GrpcServerConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile/src/main/java/pb/java/microservices/grpc/profile/config/GrpcServerConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/profile/src/main/java/pb/java/microservices/grpc/profile/config/GrpcServerConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search/src/main/java/pb/java/microservices/grpc/search/config/GrpcServerConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/search/src/main/java/pb/java/microservices/grpc/search/config/GrpcServerConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/search/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/search/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,7 +61,13 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2U14HH2RCvMqm3tuTxVubdCTI20" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -96,19 +78,31 @@
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/user/Desktop/PB/impl/microservices-java-grpc/profile",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/pawel/OneDrive/Pulpit/PB/Repos/Java/microservices-java-grpc/search",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\pawel\OneDrive\Pulpit\PB\Repos\Java\microservices-java-grpc\search" />
+      <recent name="C:\Users\pawel\OneDrive\Pulpit\PB\Repos\Java\microservices-java-grpc\Rate" />
+      <recent name="C:\Users\pawel\OneDrive\Pulpit\PB\Repos\Java\microservices-java-grpc\profile" />
+      <recent name="C:\Users\pawel\OneDrive\Pulpit\PB\Repos\Java\microservices-java-grpc\geo" />
+      <recent name="C:\Users\pawel\OneDrive\Pulpit\PB\Repos\Java\microservices-java-grpc\gateway" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -116,7 +110,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.GatewayApplication">
+  <component name="RunManager" selected="Spring Boot.ProfileApplication">
     <configuration name="GatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="gateway.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="pb.java.microservices.grpc.gateway.GatewayApplication" />
@@ -184,11 +178,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.GatewayApplication" />
-        <item itemvalue="Spring Boot.SearchApplication" />
-        <item itemvalue="Spring Boot.RateApplication" />
         <item itemvalue="Spring Boot.ProfileApplication" />
         <item itemvalue="Spring Boot.GeoApplication" />
+        <item itemvalue="Spring Boot.RateApplication" />
+        <item itemvalue="Spring Boot.SearchApplication" />
+        <item itemvalue="Spring Boot.GatewayApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -201,10 +195,26 @@
       <option name="presentableId" value="Default" />
       <updated>1692093662744</updated>
       <workItem from="1692093664835" duration="736000" />
+      <workItem from="1695927283906" duration="5762000" />
+      <workItem from="1696082221872" duration="1156000" />
+      <workItem from="1698585008783" duration="1536000" />
+      <workItem from="1698587002049" duration="595000" />
+      <workItem from="1698603258370" duration="708000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
