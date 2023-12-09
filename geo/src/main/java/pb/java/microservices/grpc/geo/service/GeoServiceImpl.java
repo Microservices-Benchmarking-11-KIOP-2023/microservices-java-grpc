@@ -67,9 +67,10 @@ public class GeoServiceImpl extends GeoGrpc.GeoImplBase {
     public List<String> getNearbyHotels(GeoPoint center) {
 
         return geoIndex.values().stream()
-                .sorted(Comparator.comparingDouble(p -> haversineDistance(p, center)))
-                .limit(MAX_SEARCH_RESULTS)
-                .map(GeoPoint::getHotelId)
+                .map(p -> new AbstractMap.SimpleEntry<>(p, haversineDistance(p, center)))
+                .filter(entry -> entry.getValue() <= MAX_SEARCH_RADIUS)
+                .sorted(Comparator.comparingDouble(Map.Entry::getValue))
+                .map(entry -> entry.getKey().getHotelId())
                 .collect(Collectors.toList());
     }
 
