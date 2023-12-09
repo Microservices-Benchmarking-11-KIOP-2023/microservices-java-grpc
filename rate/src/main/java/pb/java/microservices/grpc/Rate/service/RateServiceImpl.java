@@ -2,6 +2,7 @@ package pb.java.microservices.grpc.Rate.service;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.protobuf.util.JsonFormat;
 import io.grpc.stub.StreamObserver;
@@ -56,18 +57,24 @@ public class RateServiceImpl extends RateGrpc.RateImplBase {
     private void loadRateTableFromJsonFile(String filename) throws IOException {
         String jsonData = readJsonFile(filename);
         List<RatePlan> ratePlanList = parseJsonToRatePlanList(jsonData);
-        this.rateTable = ratePlanList.stream().collect(Collectors.toMap(rp -> new Stay(rp.getHotelId(), rp.getInDate(), rp.getOutDate()), Function.identity()));
+        this.rateTable = ratePlanList.stream()
+                .collect(Collectors.toMap(
+                        rp -> new Stay(rp.getHotelId(), rp.getInDate(), rp.getOutDate()),
+                        Function.identity(),
+                        (existing, replacement) -> existing)); // in case of duplicates in file
     }
 
-    private List<RatePlan> parseJsonToRatePlanList(String jsonData) throws IOException {
+    private List<RatePlan> parseJsonToRatePlanList(String jsonData) {
         List<RatePlan> ratePlanList = new ArrayList<>();
         JsonArray jsonArray = new JsonParser().parse(jsonData).getAsJsonArray();
-        RatePlan.Builder builder = RatePlan.newBuilder();
 
         for (JsonElement jsonElement : jsonArray) {
-            JsonFormat.parser().ignoringUnknownFields().merge(jsonElement.toString(), builder);
+            RatePlan.Builder builder = RatePlan.newBuilder();
+            JsonObject jsonObject = jsonElement.getAsJsonObject();
+            builder.setHotelId(jsonObject.get("hotelId").getAsString());
+            builder.setInDate(jsonObject.get("inDate").getAsString());
+            builder.setOutDate(jsonObject.get("outDate").getAsString());
             ratePlanList.add(builder.build());
-            builder.clear();
         }
 
         return ratePlanList;

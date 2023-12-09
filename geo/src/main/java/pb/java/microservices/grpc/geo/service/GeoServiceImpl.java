@@ -54,12 +54,7 @@ public class GeoServiceImpl extends GeoGrpc.GeoImplBase {
         center.setLat(request.getLat());
         center.setLon(request.getLon());
 
-        List<String> hotelIds = getNearbyPoints(center)
-                .stream()
-                .sorted(Comparator.comparingDouble(p -> haversineDistance(p, center)))
-                .limit(MAX_SEARCH_RESULTS)
-                .map(GeoPoint::getHotelId)
-                .collect(Collectors.toList());
+        List<String> hotelIds = getNearbyHotels(center);
 
         Result result = Result.newBuilder()
                 .addAllHotelIds(hotelIds)
@@ -69,9 +64,12 @@ public class GeoServiceImpl extends GeoGrpc.GeoImplBase {
         responseObserver.onCompleted();
     }
 
-    private List<GeoPoint> getNearbyPoints(GeoPoint center) {
+    public List<String> getNearbyHotels(GeoPoint center) {
+
         return geoIndex.values().stream()
-                .filter(point -> haversineDistance(point, center) <= MAX_SEARCH_RADIUS)
+                .sorted(Comparator.comparingDouble(p -> haversineDistance(p, center)))
+                .limit(MAX_SEARCH_RESULTS)
+                .map(GeoPoint::getHotelId)
                 .collect(Collectors.toList());
     }
 
