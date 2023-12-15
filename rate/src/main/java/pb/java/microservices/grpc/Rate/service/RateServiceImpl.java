@@ -1,10 +1,12 @@
 package pb.java.microservices.grpc.Rate.service;
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
+import com.fasterxml.jackson.core.JsonFactory;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.core.JsonToken;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.protobuf.util.JsonFormat;
+import com.hubspot.jackson.datatype.protobuf.ProtobufModule;
 import io.grpc.stub.StreamObserver;
 import net.devh.boot.grpc.server.service.GrpcService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,9 +18,12 @@ import pb.java.microservices.grpc.rate.generatedProto.RateGrpc;
 import pb.java.microservices.grpc.rate.generatedProto.RatePlan;
 import pb.java.microservices.grpc.rate.generatedProto.Request;
 import pb.java.microservices.grpc.rate.generatedProto.Result;
+import pb.java.microservices.grpc.rate.generatedProto.RoomType;
+import com.fasterxml.jackson.core.type.TypeReference;
 
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -55,34 +60,51 @@ public class RateServiceImpl extends RateGrpc.RateImplBase {
     }
 
     private void loadRateTableFromJsonFile(String filename) throws IOException {
-        String jsonData = readJsonFile(filename);
-        List<RatePlan> ratePlanList = parseJsonToRatePlanList(jsonData);
-        this.rateTable = ratePlanList.stream()
-                .collect(Collectors.toMap(
-                        rp -> new Stay(rp.getHotelId(), rp.getInDate(), rp.getOutDate()),
-                        Function.identity(),
-                        (existing, replacement) -> existing)); // in case of duplicates in file
-    }
-
-    private List<RatePlan> parseJsonToRatePlanList(String jsonData) {
-        List<RatePlan> ratePlanList = new ArrayList<>();
-        JsonArray jsonArray = new JsonParser().parse(jsonData).getAsJsonArray();
-
-        for (JsonElement jsonElement : jsonArray) {
-            RatePlan.Builder builder = RatePlan.newBuilder();
-            JsonObject jsonObject = jsonElement.getAsJsonObject();
-            builder.setHotelId(jsonObject.get("hotelId").getAsString());
-            builder.setInDate(jsonObject.get("inDate").getAsString());
-            builder.setOutDate(jsonObject.get("outDate").getAsString());
-            ratePlanList.add(builder.build());
-        }
-
-        return ratePlanList;
-    }
-
-    private String readJsonFile(String filename) throws IOException {
         Resource resource = resourceLoader.getResource("classpath:" + filename);
-        InputStreamReader reader = new InputStreamReader(resource.getInputStream(), StandardCharsets.UTF_8);
-        return FileCopyUtils.copyToString(reader);
+        JsonFactory factory = new JsonFactory();
+        try (JsonParser parser = factory.createParser(resource.getInputStream())) {
+            while (parser.nextToken() != JsonToken.END_ARRAY) {
+                if (parser.getCurrentToken() == JsonToken.START_OBJECT) {
+                    RatePlan.Builder ratePlanBuilder = RatePlan.newBuilder();
+                    RoomType.Builder roomTypeBuilder = RoomType.newBuilder();
+                    while (parser.nextToken() != JsonToken.END_OBJECT) {
+                        String fieldName = parser.getCurrentName();
+                        parser.nextToken(); // move to value
+                        switch (fieldName) {
+                            case "hotelId":
+                                ratePlanBuilder.setHotelId(parser.getText());
+                                break;
+                            case "code":
+                                ratePlanBuilder.setCode(parser.getText());
+                                break;
+                            case "inDate":
+                                ratePlanBuilder.setInDate(parser.getText());
+                                break;
+                            case "outDate":
+                                ratePlanBuilder.setOutDate(parser.getText());
+                                break;
+                            case "roomType":
+                                // Parse nested roomType object
+                                while (parser.nextToken() != JsonToken.END_OBJECT) {
+                                    String roomTypeField = parser.getCurrentName();
+                                    parser.nextToken(); // move to value
+                                    switch (roomTypeField) {
+                                        case "bookableRate":
+                                            roomTypeBuilder.setBookableRate(parser.getDoubleValue());
+                                            break;
+                                        // Handle other fields similarly
+                                    }
+                                }
+                                ratePlanBuilder.setRoomType(roomTypeBuilder);
+                                break;
+                        }
+                    }
+                    RatePlan ratePlan = ratePlanBuilder.build();
+                    Stay stay = new Stay(ratePlan.getHotelId(), ratePlan.getInDate(), ratePlan.getOutDate());
+                    this.rateTable.put(stay, ratePlan);
+                }
+            }
+        }
     }
+
 }

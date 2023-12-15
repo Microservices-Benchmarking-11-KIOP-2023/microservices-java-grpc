@@ -23,7 +23,15 @@ dependencies {
 	implementation 'net.devh:grpc-spring-boot-starter:2.14.0.RELEASE'
 	implementation 'com.google.protobuf:protobuf-java:3.17.3'
 	implementation 'com.google.protobuf:protobuf-java-util:3.17.3'
+	implementation 'com.hubspot.jackson:jackson-datatype-protobuf:0.9.14'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'com.fasterxml.jackson.core:jackson-core:2.13.0'  // Use the latest version suitable for your project
+
+	// Jackson databind for object mapping (optional if you need object mapping)
+	implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.0'
+
+	// Jackson annotations (optional if you use annotations)
+	implementation 'com.fasterxml.jackson.core:jackson-annotations:2.13.0'
 }
 
 protobuf {
